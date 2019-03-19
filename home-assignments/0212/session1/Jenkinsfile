@@ -1,0 +1,8 @@
+node{
+    stage('Running exercise1'){
+        sh 'python3 ./exercise1.py'
+    }
+    stage('Running exercise2'){
+        sh 'python3 ./exercise2.py'
+    }
+}
