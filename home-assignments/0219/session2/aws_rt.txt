@@ -1,0 +1,49 @@
+resource "aws_route_table" "rtb-0570793d5674880b2" {
+    vpc_id     = "vpc-090cf936e3822eea6"
+
+    tags {
+    }
+}
+
+resource "aws_route_table" "rtb-020e8cd7f66acc7e5" {
+    vpc_id     = "vpc-06312c5bd058d6274"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = "igw-082789227c0b11fae"
+    }
+
+    tags {
+    }
+}
+
+resource "aws_route_table" "rtb-07cd221cca8577762" {
+    vpc_id     = "vpc-090cf936e3822eea6"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+    }
+
+    tags {
+    }
+}
+
+resource "aws_route_table" "rtb-0ed35767d843aed9e" {
+    vpc_id     = "vpc-06312c5bd058d6274"
+
+    tags {
+    }
+}
+
+resource "aws_route_table" "rtb-03e8f9a4ec751aba4" {
+    vpc_id     = "vpc-090cf936e3822eea6"
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = "igw-02777b34236455608"
+    }
+
+    tags {
+    }
+}
+

@@ -1,0 +1,32 @@
+resource "aws_iam_policy_attachment" "TF-POLICY-policy-attachment" {
+    name       = "TF-POLICY-policy-attachment"
+    policy_arn = "arn:aws:iam::379671003206:policy/TF-POLICY"
+    groups     = []
+    users      = []
+    roles      = ["EC2-Role"]
+}
+
+resource "aws_iam_policy_attachment" "AdministratorAccess-policy-attachment" {
+    name       = "AdministratorAccess-policy-attachment"
+    policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+    groups     = ["Administrators"]
+    users      = []
+    roles      = []
+}
+
+resource "aws_iam_policy_attachment" "AWSSupportServiceRolePolicy-policy-attachment" {
+    name       = "AWSSupportServiceRolePolicy-policy-attachment"
+    policy_arn = "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+    groups     = []
+    users      = []
+    roles      = ["AWSServiceRoleForSupport"]
+}
+
+resource "aws_iam_policy_attachment" "AWSTrustedAdvisorServiceRolePolicy-policy-attachment" {
+    name       = "AWSTrustedAdvisorServiceRolePolicy-policy-attachment"
+    policy_arn = "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+    groups     = []
+    users      = []
+    roles      = ["AWSServiceRoleForTrustedAdvisor"]
+}
+

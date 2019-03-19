@@ -1,0 +1,112 @@
+resource "aws_security_group" "vpc-06312c5bd058d6274-launch-wizard-2" {
+    name        = "launch-wizard-2"
+    description = "launch-wizard-2 created 2019-03-04T14:58:25.629+02:00"
+    vpc_id      = "vpc-06312c5bd058d6274"
+
+    ingress {
+        from_port       = 22
+        to_port         = 22
+        protocol        = "tcp"
+        cidr_blocks     = ["93.172.58.94/32"]
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+
+resource "aws_security_group" "vpc-06312c5bd058d6274-default" {
+    name        = "default"
+    description = "default VPC security group"
+    vpc_id      = "vpc-06312c5bd058d6274"
+
+    ingress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        security_groups = []
+        self            = true
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+
+resource "aws_security_group" "vpc-090cf936e3822eea6-sgprivate" {
+    name        = "sgprivate"
+    description = "Rules for private net"
+    vpc_id      = "vpc-090cf936e3822eea6"
+
+    ingress {
+        from_port       = 22
+        to_port         = 22
+        protocol        = "tcp"
+        cidr_blocks     = ["10.0.0.0/16"]
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+
+resource "aws_security_group" "vpc-090cf936e3822eea6-default" {
+    name        = "default"
+    description = "default VPC security group"
+    vpc_id      = "vpc-090cf936e3822eea6"
+
+    ingress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        security_groups = []
+        self            = true
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+
+resource "aws_security_group" "vpc-090cf936e3822eea6-sgpublic" {
+    name        = "sgpublic"
+    description = "Rules for public net"
+    vpc_id      = "vpc-090cf936e3822eea6"
+
+    ingress {
+        from_port       = 22
+        to_port         = 22
+        protocol        = "tcp"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+
+    egress {
+        from_port       = 0
+        to_port         = 0
+        protocol        = "-1"
+        cidr_blocks     = ["0.0.0.0/0"]
+    }
+
+}
+

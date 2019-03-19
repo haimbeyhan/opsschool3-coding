@@ -1,0 +1,23 @@
+---
+- name: Session 1 homework
+  hosts: nodes
+  become: true
+  tasks:
+    - name: Install ntp package
+      apt:
+        name: ntp
+        install_recommends: no
+        state: present
+        update_cache: yes
+    - name: Copy ntp.conf from remote url
+      get_url:
+        url: https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/files/ntp.conf
+        backup: yes
+        dest: "/etc/"
+    - name: Restart ntp service
+      systemd:
+        name: ntp
+        state: restarted
+        
+        
+

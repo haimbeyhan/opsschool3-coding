@@ -1,0 +1,25 @@
+resource "aws_route_table_association" "rtb-020e8cd7f66acc7e5-rtbassoc-001756d814d9d1376" {
+    route_table_id = "rtb-020e8cd7f66acc7e5"
+    subnet_id = "subnet-0659837dde4737ff6"
+}
+
+resource "aws_route_table_association" "rtb-07cd221cca8577762-rtbassoc-08db0cc85ed05ee4c" {
+    route_table_id = "rtb-07cd221cca8577762"
+    subnet_id = "subnet-08eb26b2ad28f127e"
+}
+
+resource "aws_route_table_association" "rtb-07cd221cca8577762-rtbassoc-0e9204d1a8d759072" {
+    route_table_id = "rtb-07cd221cca8577762"
+    subnet_id = "subnet-09f78bbf9d5c58ff0"
+}
+
+resource "aws_route_table_association" "rtb-03e8f9a4ec751aba4-rtbassoc-07c287323fafa3a06" {
+    route_table_id = "rtb-03e8f9a4ec751aba4"
+    subnet_id = "subnet-0dc9443689cad8f60"
+}
+
+resource "aws_route_table_association" "rtb-03e8f9a4ec751aba4-rtbassoc-0ca98368c32710108" {
+    route_table_id = "rtb-03e8f9a4ec751aba4"
+    subnet_id = "subnet-0fb50d027522b42a5"
+}
+

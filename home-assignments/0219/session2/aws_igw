@@ -1,0 +1,14 @@
+resource "aws_internet_gateway" "igw-02777b34236455608" {
+    vpc_id = "vpc-090cf936e3822eea6"
+
+    tags {
+    }
+}
+
+resource "aws_internet_gateway" "igw-082789227c0b11fae" {
+    vpc_id = "vpc-06312c5bd058d6274"
+
+    tags {
+    }
+}
+

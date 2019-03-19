@@ -1,0 +1,115 @@
+resource "aws_instance" "i-0426f1dc272e6cb03" {
+    ami                         = "ami-0ac019f4fcb7cb7e6"
+    availability_zone           = "us-east-1a"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = "id_rsa"
+    subnet_id                   = "subnet-0659837dde4737ff6"
+    vpc_security_group_ids      = ["sg-032190c4ae90c7782"]
+    associate_public_ip_address = true
+    private_ip                  = "192.168.0.69"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        delete_on_termination = true
+    }
+
+    tags {
+    }
+}
+
+resource "aws_instance" "i-0e5ad85abb118bc06" {
+    ami                         = "ami-0ac019f4fcb7cb7e6"
+    availability_zone           = "us-east-1a"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = ""
+    subnet_id                   = "subnet-09f78bbf9d5c58ff0"
+    vpc_security_group_ids      = ["sg-0772155d68c17b49b"]
+    associate_public_ip_address = false
+    private_ip                  = "10.0.2.200"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        delete_on_termination = true
+    }
+
+    tags {
+    }
+}
+
+resource "aws_instance" "i-0c8556a2358c10c3a" {
+    ami                         = "ami-0ac019f4fcb7cb7e6"
+    availability_zone           = "us-east-1a"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = "id_rsa"
+    subnet_id                   = "subnet-0dc9443689cad8f60"
+    vpc_security_group_ids      = ["sg-0f714cb41b7582e62"]
+    associate_public_ip_address = true
+    private_ip                  = "10.0.1.126"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        delete_on_termination = true
+    }
+
+    tags {
+    }
+}
+
+resource "aws_instance" "i-08fe4a07769f91398" {
+    ami                         = "ami-0ac019f4fcb7cb7e6"
+    availability_zone           = "us-east-1b"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = ""
+    subnet_id                   = "subnet-08eb26b2ad28f127e"
+    vpc_security_group_ids      = ["sg-0772155d68c17b49b"]
+    associate_public_ip_address = false
+    private_ip                  = "10.0.4.25"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        delete_on_termination = true
+    }
+
+    tags {
+    }
+}
+
+resource "aws_instance" "i-0c07391a6220d8f39" {
+    ami                         = "ami-0ac019f4fcb7cb7e6"
+    availability_zone           = "us-east-1b"
+    ebs_optimized               = false
+    instance_type               = "t2.micro"
+    monitoring                  = false
+    key_name                    = "id_rsa"
+    subnet_id                   = "subnet-0fb50d027522b42a5"
+    vpc_security_group_ids      = ["sg-0f714cb41b7582e62"]
+    associate_public_ip_address = true
+    private_ip                  = "10.0.3.110"
+    source_dest_check           = true
+
+    root_block_device {
+        volume_type           = "gp2"
+        volume_size           = 8
+        delete_on_termination = true
+    }
+
+    tags {
+    }
+}
+

@@ -1,0 +1,39 @@
+---
+- name: Pre-session homework
+  hosts: nodes
+  become: true
+  tasks:
+    - name: Add user hbeyhan
+      user:
+        name: hbeyhan
+        comment: Haim Beyhan
+        uid: 1010
+        groups: sudo
+        append: yes
+        shell: /bin/bash
+        password: wKm3AOQgW9iHk
+        state: present
+    - name: Create ssh folder
+      file:
+        path: "/home/hbeyhan/.ssh"
+        state: directory
+        mode: 0700
+        owner: hbeyhan
+        group: hbeyhan
+    - name: Copy ssh public key
+      copy:
+        src: "/home/hbeyhan/.ssh/id_rsa.pub"
+        dest:  "/home/hbeyhan/.ssh/authorized_keys"
+        owner: hbeyhan
+        group: hbeyhan
+        mode: 0600
+    - name: Copy /etc/hosts to /tmp on nodes
+      copy:
+        src: /etc/hosts
+        dest: /tmp/
+    - name: Remove hosts file from node /tmp
+      file:
+        path: /tmp/hosts
+        state: absent
+
+

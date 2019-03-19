@@ -1,0 +1,10 @@
+resource "aws_nat_gateway" "nat-06cd71716426a10f7" {
+    allocation_id = "eipalloc-0cc7e06c34de1f34b"
+    subnet_id = "subnet-06e03dff3b0449ee4"
+}
+
+resource "aws_nat_gateway" "nat-0456890ee75ca18f8" {
+    allocation_id = "eipalloc-02baee86ea2dd548b"
+    subnet_id = "subnet-0dc9443689cad8f60"
+}
+

@@ -1,0 +1,9 @@
+bin/
+lib/
+include/
+.terraform/
+.vagrant/
+*.log
+*.tfstate
+*.gz
+.last_updated_k

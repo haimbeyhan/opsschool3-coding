@@ -1,0 +1,50 @@
+resource "aws_subnet" "subnet-0fb50d027522b42a5-subnet-0fb50d027522b42a5" {
+    vpc_id                  = "vpc-090cf936e3822eea6"
+    cidr_block              = "10.0.3.0/24"
+    availability_zone       = "us-east-1b"
+    map_public_ip_on_launch = false
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-09f78bbf9d5c58ff0-subnet-09f78bbf9d5c58ff0" {
+    vpc_id                  = "vpc-090cf936e3822eea6"
+    cidr_block              = "10.0.2.0/24"
+    availability_zone       = "us-east-1a"
+    map_public_ip_on_launch = false
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-0dc9443689cad8f60-subnet-0dc9443689cad8f60" {
+    vpc_id                  = "vpc-090cf936e3822eea6"
+    cidr_block              = "10.0.1.0/24"
+    availability_zone       = "us-east-1a"
+    map_public_ip_on_launch = false
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-08eb26b2ad28f127e-subnet-08eb26b2ad28f127e" {
+    vpc_id                  = "vpc-090cf936e3822eea6"
+    cidr_block              = "10.0.4.0/24"
+    availability_zone       = "us-east-1b"
+    map_public_ip_on_launch = false
+
+    tags {
+    }
+}
+
+resource "aws_subnet" "subnet-0659837dde4737ff6-subnet-0659837dde4737ff6" {
+    vpc_id                  = "vpc-06312c5bd058d6274"
+    cidr_block              = "192.168.0.0/24"
+    availability_zone       = "us-east-1a"
+    map_public_ip_on_launch = false
+
+    tags {
+    }
+}
+

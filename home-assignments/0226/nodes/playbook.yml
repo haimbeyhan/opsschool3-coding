@@ -1,0 +1,48 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Create user jenkins
+    user:
+      name: jenkins
+      groups: sudo
+      append: yes
+      create_home: yes
+      home: /home/jenkins
+      state: present
+
+  - name: Set jenkins authorized key in alternate location
+    authorized_key:
+      user: jenkins
+      state: present
+      key: "{{ lookup('file', '~/pubkeys/jenkins_key.pub') }}"
+      manage_dir: True
+
+  - name: Install ntp service
+    apt:
+      name: ntp
+      state: present
+
+  - name: Make sure a service is running
+    systemd:
+      state: started
+      name: ntp
+
+  - name: Turn on sync time
+    shell: timedatectl set-ntp on
+    args:
+      executable: /bin/bash
+
+  - name: Update repository and install jdk 8
+    apt:
+      name: openjdk-8-jre-headless
+      update_cache: yes
+      install_recommends: no
+      state: present
+  
+
+    
+ 
+    

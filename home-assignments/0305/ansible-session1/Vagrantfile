@@ -1,0 +1,38 @@
+$script = <<-SCRIPT	
+	[ ! -L /usr/bin/python ] && ln -s /usr/bin/python3 /usr/bin/python
+	sudo sed -i '/^127.0.0.1/d' /etc/hosts
+	sudo sed -i '/^127.0.1.1/d' /etc/hosts
+SCRIPT
+
+Vagrant.configure("2") do |config|
+	config.hostmanager.enabled = true
+  	config.hostmanager.manage_host = true
+  	config.hostmanager.manage_guest = true
+  	config.hostmanager.ignore_private_ip = false
+  	config.hostmanager.include_offline = true
+	(1..2).each do |i|
+		config.vm.define "node#{i}" do |node|
+			node.vm.box = "ubuntu/bionic64"
+			node.vm.hostname = "node#{i}"
+			node.vbguest.auto_update = false
+			j = 100 + i
+			node.vm.network "private_network", ip: "192.168.56.#{j}"
+			#node.vm.network "private_network", type: "dhcp"
+			node.vm.provider "virtualbox" do |vb|
+				vb.memory = "2048"
+				vb.customize [ "modifyvm", :id, "--uartmode1", "file", File.join(Dir.pwd.sub("/mnt/c","c:"), ".vagrant/vbox-console.log") ]
+			end
+			
+			node.ssh.insert_key = false
+			node.ssh.private_key_path = ["~/vagrant-keys/id_rsa", "~/.vagrant.d/insecure_private_key"]
+			node.vm.provision "file", source: "~/vagrant-keys/id_rsa.pub", destination: "~/.ssh/authorized_keys"
+			
+			node.vm.provision "shell", inline: $script
+
+		#	node.vm.provision :ansible do |ansible|
+		#		ansible.playbook = "playbook.yml"
+		#	end
+		end
+	end
+	
+end

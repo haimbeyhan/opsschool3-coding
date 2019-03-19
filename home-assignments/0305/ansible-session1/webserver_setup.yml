@@ -1,0 +1,21 @@
+---
+- name: Session 1 homework
+  hosts: nodes
+  become: true
+  tasks:
+    - name: Install apache2
+      apt:
+        name: apache2
+        install_recommends: no
+        state: present
+        update_cache: yes
+    - name: Copy index.html from remote url
+      get_url:
+        url: https://raw.githubusercontent.com/shayharush/opsschol-ansible/master/session1/files/index.html
+        backup: yes
+        dest: "/var/www/html/"
+
+
+
+        
+
