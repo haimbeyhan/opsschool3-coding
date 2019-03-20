@@ -1,5 +1,5 @@
 node{
-    dir("home-assignments/0212/session1"){
+    dir(pwd){
         stage('Running exercise1'){
             sh 'python3 ./exercise1.py'
         }   
