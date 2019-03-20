@@ -1,5 +1,5 @@
 node{
-    dir("$WORKSPACE/home-assignments/0212/session1"){
+    dir("$WORKSPACE/home-assignments"){
         stage('Running exercise1'){
             sh 'ls -l'
         }   
